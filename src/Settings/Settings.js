@@ -4,7 +4,7 @@ import DateSetting from "./DateSetting";
 const styles = {
   margin: {
     marginTop: "10px",
-    marginRight: "20px",
+    marginRight: "10px",
     marginLeft: "0px",
     padding: "10px",
   },

@@ -6,7 +6,7 @@ const styles = {
   margin: {
     marginTop: "10px",
     marginRight: "0px",
-    marginLeft: "20px",
+    marginLeft: "10px",
   },
 };
 

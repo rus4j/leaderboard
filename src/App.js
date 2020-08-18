@@ -43,10 +43,10 @@ function App() {
         <Header />
       </div>
       <div className="row">
-        <div className="col m8">
+        <div className="col m8 s12">
           <Board records={newData.sort((r1, r2) => r2.prCount - r1.prCount)} />
         </div>
-        <div className="col m4">
+        <div className="col m4 s12">
           <Settings />
         </div>
       </div>
