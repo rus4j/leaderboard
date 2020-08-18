@@ -222,17 +222,15 @@
       "locked": false,
       "author": {
         "user": {
-          "name": "Aleksandr.Makarov",
-          "emailAddress": "Aleksandr.Makarov@email.com",
+          "name": "Aleksandr",
+          "emailAddress": "Aleksandr@email.com",
           "id": 19437,
-          "displayName": "Makarov, Aleksandr",
+          "displayName": "Aleksandr",
           "active": true,
-          "slug": "aleksandr.makarov",
+          "slug": "aleksandr",
           "type": "NORMAL",
           "links": {
-            "self": [
-              { "href": "https://stash.company.com/users/aleksandr.makarov" }
-            ]
+            "self": [{ "href": "https://stash.company.com/users/aleksandr" }]
           }
         },
         "role": "AUTHOR",
@@ -576,15 +574,15 @@
       "locked": false,
       "author": {
         "user": {
-          "name": "Lucal",
-          "emailAddress": "Lucal@email.com",
+          "name": "Lucas",
+          "emailAddress": "Lucas@email.com",
           "id": 15434,
           "displayName": "Lucas",
           "active": true,
-          "slug": "lucal",
+          "slug": "lucas",
           "type": "NORMAL",
           "links": {
-            "self": [{ "href": "https://stash.company.com/users/lucal" }]
+            "self": [{ "href": "https://stash.company.com/users/lucas" }]
           }
         },
         "role": "AUTHOR",
