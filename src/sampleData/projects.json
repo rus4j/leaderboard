@@ -1,0 +1,61 @@
+{
+  "size": 5,
+  "limit": 5,
+  "isLastPage": false,
+  "values": [
+    {
+      "key": "TEST_PROJ",
+      "id": 4616,
+      "name": "TEST_PROJECT",
+      "description": "Test project in Java",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [{ "href": "https://stash.company.com/projects/TEST_PROJ" }]
+      }
+    },
+    {
+      "key": "WAREHOUSE",
+      "id": 1420,
+      "name": "WAREHOUSE",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [{ "href": "https://stash.company.com/projects/WAREHOUSE" }]
+      }
+    },
+    {
+      "key": "QWER",
+      "id": 1101,
+      "name": "QWER",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [{ "href": "https://stash.company.com/projects/QWER" }]
+      }
+    },
+    {
+      "key": "COMMONS",
+      "id": 1105,
+      "name": "COMMONS",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [{ "href": "https://stash.company.com/projects/COMMONS" }]
+      }
+    },
+    {
+      "key": "DEMO",
+      "id": 1156,
+      "name": "DEMO",
+      "description": "Demo project",
+      "public": false,
+      "type": "NORMAL",
+      "links": {
+        "self": [{ "href": "https://stash.company.com/projects/DEMO" }]
+      }
+    }
+  ],
+  "start": 0,
+  "nextPageStart": 5
+}
