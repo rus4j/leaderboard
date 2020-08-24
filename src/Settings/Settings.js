@@ -1,5 +1,6 @@
 import React from "react";
 import DateSetting from "./DateSetting";
+import projects from "../sampleData/projects.json"; // /REST/API/1.0/PROJECTS?NAME&PERMISSION
 
 const styles = {
   margin: {
@@ -23,12 +24,14 @@ function Settings() {
       <div className="input-field col s12">
         <select>
           <option defaultValue value="" disabled></option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
+          {projects.values.map((value, index) => {
+            return <option value={value.key}>{value.key}</option>;
+          })}
         </select>
         <label>Project</label>
       </div>
+
+      {/* /REST/API/1.0/PROJECTS/{PROJECTKEY}/REPOS/{REPOSITORYSLUG}/BRANCHES?BASE&DETAILS&FILTERTEXT&ORDERBY&BOOSTMATCHES */}
       <div className="input-field col s12">
         <select>
           <option defaultValue value="" disabled></option>
