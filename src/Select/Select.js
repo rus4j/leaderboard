@@ -7,7 +7,11 @@ function Select({ src, label }) {
       <select>
         <option defaultValue value="" disabled></option>
         {src.map((value, index) => {
-          return <option value={value.key}>{value.key}</option>;
+          return (
+            <option key={index} value={value.key}>
+              {value.key}
+            </option>
+          );
         })}
       </select>
       <label>{label}</label>
