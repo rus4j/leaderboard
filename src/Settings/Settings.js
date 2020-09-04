@@ -1,7 +1,9 @@
 import React from "react";
+import { useState } from "react";
 import DateSetting from "./DateSetting";
-import projects from "../sampleData/projects.json"; // /REST/API/1.0/PROJECTS?NAME&PERMISSION
+import projects from "../sampleData/projects.json";
 import Select from "../Select/Select";
+import StashApi from "../StashApi";
 
 const styles = {
   margin: {
@@ -16,13 +18,26 @@ const styles = {
 };
 
 function Settings() {
+  const [projectQuery, setProjectQuery] = useState("");
+
+  const { data, loading, hasMore, hasError } = StashApi(projectQuery);
+
+  function updateUrl(e) {
+    setProjectQuery(e.target.value + "/rest/api/1.0/projects");
+  }
+
   return (
     <div className="z-depth-1" style={styles.margin}>
       <div className="input-field col s12">
-        <input id="last_name" type="text" />
+        <input id="last_name" type="text" onChange={updateUrl} />
         <label htmlFor="last_name">Stash URL</label>
+        {hasError && (
+          <span class="helper-text" data-error="wrong" data-success="right">
+            Invalid url
+          </span>
+        )}
       </div>
-      <Select src={projects.values} label="Project" />
+      <Select src={data} label="Project" />
 
       {/* /REST/API/1.0/PROJECTS/{PROJECTKEY}/REPOS/{REPOSITORYSLUG}/BRANCHES?BASE&DETAILS&FILTERTEXT&ORDERBY&BOOSTMATCHES */}
       <Select
