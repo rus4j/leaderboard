@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import DateSetting from "./DateSetting";
 import projects from "../sampleData/projects.json";
-import Select from "../Select/Select";
+import DataSelect from "../Select/DataSelect";
 import StashApi from "../StashApi";
 
 const styles = {
@@ -37,10 +37,10 @@ function Settings() {
           </span>
         )}
       </div>
-      <Select src={data} label="Project" />
+      <DataSelect src={data} label="Project" />
 
       {/* /REST/API/1.0/PROJECTS/{PROJECTKEY}/REPOS/{REPOSITORYSLUG}/BRANCHES?BASE&DETAILS&FILTERTEXT&ORDERBY&BOOSTMATCHES */}
-      <Select
+      <DataSelect
         src={[{ key: "dev" }, { key: "master" }, { key: "release" }]}
         label="Branch"
       />
