@@ -157,9 +157,9 @@ function Navigator(props) {
         </ListItem>
 
         <ListItem className={clsx(classes.item)}>
-          <ListItemIcon className={classes.itemIcon}>
+          {/* <ListItemIcon className={classes.itemIcon}>
             <SettingsIcon />
-          </ListItemIcon>
+          </ListItemIcon> */}
           <DateSetting></DateSetting>
         </ListItem>
       </List>

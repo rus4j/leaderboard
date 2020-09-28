@@ -1,4 +1,10 @@
+import "date-fns";
 import React from "react";
+import DateFnsUtils from "@date-io/date-fns";
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from "@material-ui/pickers";
 
 const styles = {
   margin: {
@@ -8,6 +14,20 @@ const styles = {
 };
 
 function DateSetting() {
+  const [fromDate, setFromDate] = React.useState(
+    new Date("2014-08-18T21:11:54")
+  );
+
+  const [toDate, setToDate] = React.useState(new Date("2014-08-18T21:11:54"));
+
+  const handleFromDateChange = (date) => {
+    setFromDate(date);
+  };
+
+  const handleToDateChange = (date) => {
+    setToDate(date);
+  };
+
   return (
     <div>
       <div>
@@ -34,14 +54,34 @@ function DateSetting() {
         </a>
       </div>
 
-      <div className="input-field col s6">
-        <input id="date_from" type="text" className="datepicker"></input>
-        <label htmlFor="date_from">From</label>
-      </div>
-      <div className="input-field col s6">
-        <input id="date_to" type="text" className="datepicker"></input>
-        <label htmlFor="date_to">To</label>
-      </div>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <KeyboardDatePicker
+          disableToolbar
+          variant="inline"
+          format="MM/dd/yyyy"
+          margin="normal"
+          id="date-picker-inline"
+          label="From"
+          value={fromDate}
+          onChange={handleFromDateChange}
+          KeyboardButtonProps={{
+            "aria-label": "change date",
+          }}
+        />
+        <KeyboardDatePicker
+          disableToolbar
+          variant="inline"
+          format="MM/dd/yyyy"
+          margin="normal"
+          id="date-picker-inline"
+          label="To"
+          value={toDate}
+          onChange={handleToDateChange}
+          KeyboardButtonProps={{
+            "aria-label": "change date",
+          }}
+        />
+      </MuiPickersUtilsProvider>
     </div>
   );
 }
