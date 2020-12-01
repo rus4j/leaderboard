@@ -1,21 +1,57 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Collapse from '@material-ui/core/Collapse';
+import StarRateIcon from '@material-ui/icons/StarRate'
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import StarBorder from '@material-ui/icons/StarBorder';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
+  },
+}));
+
 function BoardRecord({ record, index }) {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
   return (
-    <li>
-      <div className="collapsible-header">
-        <span className="col s1">{index + 1}</span>
-        {/* <i className="material-icons">filter_drama</i> */}
-        {record.name}
-        <span className="col s10" style={{ textAlign: "right", width: "100%" }}>
-          {record.prCount}
-        </span>
-      </div>
-      <div className="collapsible-body">
-        <span>{record.email}</span>
-      </div>
-    </li>
+    <div>
+      <ListItem button onClick={handleClick}>
+        <ListItemIcon>
+          <StarRateIcon></StarRateIcon>
+          {/* {index + 1} */}
+        </ListItemIcon>
+        <ListItemText primary={record.name} secondary={'number of pull requests ' + record.prCount} />
+        {open ? <ExpandLess /> : <ExpandMore />}
+      </ListItem>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <StarBorder />
+            </ListItemIcon>
+            <ListItemText primary={record.email} />
+          </ListItem>
+        </List>
+      </Collapse>
+    </div>
   );
 }
 
